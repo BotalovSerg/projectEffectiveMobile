@@ -2,16 +2,44 @@
     "library": [
         {
             "id": 1,
-            "title": "TEst",
-            "author": "Ahtor test",
+            "title": "Book3",
+            "author": "Test",
             "year": "2024",
             "status": "в наличии"
         },
         {
             "id": 3,
-            "title": "Three",
-            "author": "Athor 1",
+            "title": "Test Bo",
+            "author": "Test",
+            "year": "2025",
+            "status": "в наличии"
+        },
+        {
+            "id": 4,
+            "title": "Python",
+            "author": "Tim Cook",
             "year": "2024",
+            "status": "в наличии"
+        },
+        {
+            "id": 5,
+            "title": "Война и мир",
+            "author": "Лев Толстой",
+            "year": "1869",
+            "status": "в наличии"
+        },
+        {
+            "id": 6,
+            "title": "Java",
+            "author": "Athor",
+            "year": "2023",
+            "status": "в наличии"
+        },
+        {
+            "id": 7,
+            "title": "Руслан и Людмила",
+            "author": "Пушкин Александр Сергеевич",
+            "year": "1820",
             "status": "в наличии"
         }
     ]
