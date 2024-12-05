@@ -5,9 +5,7 @@ def main():
     library = Library()
     while True:
         print("1. Добавить книгу")
-        print(
-            "2. Удалить книгу"
-        )  # Пользователь вводит id книги, которую нужно удалить.
+        print("2. Удалить книгу")
         print(
             "3. Найти книги"
         )  # : Пользователь может искать книги по title, author или year.
@@ -31,7 +29,12 @@ def main():
             library.add_book(data)
         if choice == "2":
             id_book = int(input("Ведите ID книги: "))
-            library.delete_book(id_book=id_book)
+            text = library.delete_book(id_book=id_book)
+            print(text)
+        if choice == "3":
+            fields_search = input("Для поиска книг, введите через запятую параметры поиска (title, author, year): ")
+            result = library.search_book(fields_search)
+            print("result ", result)
         if choice == "0":
             break
 
