@@ -64,6 +64,14 @@ class Library:
             return books
         return None
 
+    def update_book(self, id_book: int, status: str) -> dict | None:
+        for book in self.books["library"]:
+            if book["id"] == id_book:
+                book["status"] = status
+                self.save_books()
+                return book
+        return None
+
     def save_books(self) -> None:
         with open(self.FILE, "w", encoding="utf-8") as file:
             json.dump(self.books, file, indent=4, ensure_ascii=False)
@@ -74,9 +82,7 @@ def display_menu() -> None:
     print("2. Удалить книгу")
     print("3. Найти книги")
     print("4. Показать все книги")
-    print(
-        "5. Изменить статус книги"
-    )  # Пользователь вводит id книги и новый статус (“в наличии” или “выдана”).
+    print("5. Изменить статус книги")
     print("0. Выход")
 
 
@@ -127,3 +133,16 @@ def show_books_all(library: Library) -> None:
     list_books = library.get_books()
     print("\nСписок всех книг:\n")
     print_books(list_books)
+
+
+def update_book(library: Library):
+    id_book, status = input(
+        "Введите id книги и новый статус (“в наличии” или “выдана”), через запятую: "
+    ).split(",")
+    result = library.update_book(int(id_book), status.strip())
+    if result is not None:
+        print(
+            f"Статус у книги 'ID:{result['id']} {result['title']}' изменен на {result['status']!r}"
+        )
+    else:
+        print(f"Книги с ID:{id_book} нет")

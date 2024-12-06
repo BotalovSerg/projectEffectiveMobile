@@ -5,6 +5,7 @@ from core import (
     delete_book_by_id,
     search_books,
     show_books_all,
+    update_book,
 )
 
 
@@ -29,6 +30,9 @@ def main():
 
         elif choice == "4":
             show_books_all(library)
+
+        elif choice == "5":
+            update_book(library)
 
         elif choice == "0":
             print("Выход из программы...")
